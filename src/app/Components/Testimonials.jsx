@@ -1,6 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import React from 'react';
+import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const testimonials = [
   {
@@ -33,54 +36,72 @@ const testimonials = [
       'Their cold room maintenance is outstanding. Our business runs smoothly thanks to COOL FIX.',
     location: 'Glasgow',
   },
-  {
-    name: 'Omar S.',
-    feedback:
-      'Prompt service and very skilled technicians. Highly recommend COOL FIX for refrigeration needs.',
-    location: 'Bristol',
-  },
 ];
 
-export default function Testimonials() {
+function Card({ name, feedback, location }) {
   return (
-    <section className="bg-gradient-to-b from-sky-100 via-white to-sky-50 py-20 px-6 sm:px-10 lg:px-32 relative z-0 overflow-visible">
-      <div className="max-w-5xl mx-auto text-center mb-16">
-        <h2 className="text-4xl font-extrabold text-sky-800">Client Testimonials</h2>
-        <p className="mt-4 text-gray-700 text-lg">
-          See why our clients trust COOL FIX for all their cooling needs.
+    <div className="keen-slider__slide flex flex-col bg-white rounded-2xl shadow-md p-6 w-full sm:w-[320px]">
+      <div className="relative mb-4">
+        <div className="bg-sky-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-md">
+          {name.charAt(0)}
+        </div>
+        <div className="absolute top-11 left-4 w-0 h-0 border-l-[10px] border-r-[10px] border-b-[10px] border-transparent border-b-white" />
+      </div>
+      <p className="text-gray-700 text-base italic mb-4">“{feedback}”</p>
+      <div className="text-sm font-semibold text-sky-700 mt-auto">
+        — {name}, {location}
+      </div>
+    </div>
+  );
+}
+
+export default function Testimonials() {
+  const [sliderRef, slider] = useKeenSlider({
+    loop: true,
+    slides: {
+      perView: 1.1,
+      spacing: 16,
+    },
+    breakpoints: {
+      '(min-width: 768px)': {
+        slides: { perView: 2.2, spacing: 24 },
+      },
+      '(min-width: 1024px)': {
+        slides: { perView: 3, spacing: 24 },
+      },
+    },
+  });
+
+  return (
+    <section className="bg-gradient-to-b from-sky-50 via-white to-sky-100 py-16 px-4 sm:px-10 lg:px-32">
+      <div className="max-w-6xl mx-auto text-center mb-10">
+        <h2 className="text-4xl font-extrabold text-sky-800 mb-3">What Our Clients Say</h2>
+        <p className="text-gray-600 text-lg">
+          Real experiences from people who trust COOL FIX with their cooling systems.
         </p>
       </div>
 
-      <div
-        className="flex gap-8 overflow-x-auto snap-x snap-mandatory px-7 scrollbar-thin scrollbar-thumb-sky-400 scrollbar-track-sky-100 max-w-6xl mx-auto"
-        style={{ scrollPaddingLeft: '1rem', scrollPaddingRight: '1rem' }}
-      >
-        {testimonials.map(({ name, feedback, location }, i) => (
-          <motion.article
-            key={i}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: i * 0.15 }}
-            tabIndex={0}
-            className="snap-start relative bg-white rounded-2xl shadow-lg p-6 pt-14 text-left hover:shadow-xl transition flex-shrink-0"
-            style={{ minWidth: '320px', maxWidth: '320px', height: '280px' }}
+      <div className="relative max-w-6xl mx-auto">
+        <div ref={sliderRef} className="keen-slider">
+          {testimonials.map((testimonial, index) => (
+            <Card key={index} {...testimonial} />
+          ))}
+        </div>
+
+        <div className="flex justify-center gap-6 mt-8">
+          <button
+            onClick={() => slider.current?.prev()}
+            className="p-3 rounded-full bg-white text-sky-600 hover:text-white hover:bg-sky-600 shadow transition"
           >
-            {/* Speech Bubble Triangle */}
-            <div className="absolute top-4 left-10 w-0 h-0 border-l-[10px] border-r-[10px] border-b-[10px] border-transparent border-b-white" />
-
-            {/* Avatar Initials */}
-            <div className="absolute top-0 left-6 bg-sky-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-md">
-              {name.charAt(0)}
-            </div>
-
-            {/* Testimonial Content */}
-            <p className="text-gray-700 text-base italic mb-8 leading-relaxed">“{feedback}”</p>
-            <div className="text-sm font-semibold text-sky-700">
-              — {name}, {location}
-            </div>
-          </motion.article>
-        ))}
+            <FaChevronLeft size={20} />
+          </button>
+          <button
+            onClick={() => slider.current?.next()}
+            className="p-3 rounded-full bg-white text-sky-600 hover:text-white hover:bg-sky-600 shadow transition"
+          >
+            <FaChevronRight size={20} />
+          </button>
+        </div>
       </div>
     </section>
   );

@@ -52,7 +52,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center text-white font-semibold text-lg tracking-wide">
+          <div className="hidden lg:flex items-center text-white font-semibold text-lg tracking-wide">
             {navLinks.map((link, idx) => (
               <div key={link.href} className="flex items-center relative">
                 {/* Separator */}
@@ -74,7 +74,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Hamburger */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-white focus:outline-none hover:text-sky-300 transition"
@@ -97,7 +97,7 @@ export default function Navbar() {
 
         {/* Mobile Dropdown */}
         {isOpen && (
-          <div className="md:hidden bg-sky-900 border-t border-sky-800 shadow-lg rounded-b-lg px-6 py-6 space-y-5 text-center text-white font-semibold text-lg">
+          <div className="lg:hidden bg-sky-900 border-t border-sky-800 shadow-lg rounded-b-lg px-6 py-6 space-y-5 text-center text-white font-semibold text-lg">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -117,7 +117,7 @@ export default function Navbar() {
       </nav>
 
       {/* Padding so content isn't hidden under fixed navbars */}
-      <div className="h-[76px] md:h-[96px]" />
+      <div className="h-[76px] lg:h-[96px]" />
     </>
   );
 }
