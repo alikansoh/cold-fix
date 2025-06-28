@@ -16,6 +16,7 @@ export default function Home() {
       <WhyChooseUs/>
       <Testimonials/>
       <CallToAction/>
+      <Gallery/>
       <FAQSection/>
 
 

@@ -1,57 +1,76 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
-const galleryImages = [
-  { src: '/gallery1.jpg', alt: 'AC Installation' },
-  { src: '/gallery2.jpg', alt: 'Cold Room Setup' },
-  { src: '/gallery3.jpg', alt: 'Refrigeration Unit' },
-  { src: '/gallery4.jpg', alt: 'Commercial Installation' },
-  { src: '/gallery5.jpg', alt: 'Emergency Repair' },
-  { src: '/gallery6.jpg', alt: 'Duct Work' },
+const images = [
+  { src: '/gallery1.jpeg', alt: 'Air Conditioner Installation' },
+  { src: '/gallery2.jpeg', alt: 'AC Repair' },
+  { src: '/gallery3.jpeg', alt: 'Fridge Maintenance' },
+  { src: '/gallery4.jpeg', alt: 'Freezer Fix' },
+  { src: '/gallery5.jpeg', alt: 'Washing Machine Repair' },
+  { src: '/gallery6.jpeg', alt: 'Dryer Service' },
 ];
 
-export default function Gallery() {
+export default function GallerySection() {
+  const [selected, setSelected] = useState(null);
+
   return (
-    <section
-      id="gallery"
-      className="py-20 px-6 sm:px-10 lg:px-32 bg-gray-50 text-gray-900"
-    >
-      <div className="max-w-4xl mx-auto text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">
-          Our Recent Work
+    <section className="py-20 bg-gradient-to-br from-white via-sky-50 to-blue-100" id="gallery">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-sky-800 mb-4 drop-shadow-sm">
+          Explore Our Work
         </h2>
-        <p className="text-gray-600 text-lg">
-          Explore some of our completed projects — from home installations to large-scale refrigeration systems.
+        <p className="text-gray-600 mb-12 max-w-xl mx-auto text-lg">
+          Real results from our skilled technicians. Precision. Cleanliness. Quality.
         </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {images.map((img, idx) => (
+            <div
+              key={idx}
+              className="group relative rounded-2xl shadow-xl overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+              onClick={() => setSelected(img)}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={600}
+                height={400}
+                className="w-full h-64 object-cover transition group-hover:brightness-75"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent text-white text-sm sm:text-base px-4 py-3 opacity-0 group-hover:opacity-100 transition duration-300">
+                {img.alt}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        transition={{ staggerChildren: 0.1 }}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto"
-      >
-        {galleryImages.map(({ src, alt }, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="rounded-xl overflow-hidden shadow hover:shadow-lg transition"
-          >
+      {/* Lightbox Modal */}
+      {selected && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center px-4"
+          onClick={() => setSelected(null)}
+        >
+          <div className="relative max-w-4xl w-full">
+            <button
+              onClick={() => setSelected(null)}
+              className="absolute top-4 right-4 text-white text-4xl font-bold hover:text-red-400"
+            >
+              &times;
+            </button>
             <Image
-              src={src}
-              alt={alt}
-              width={400}
-              height={300}
-              className="w-full h-full object-cover"
+              src={selected.src}
+              alt={selected.alt}
+              width={1200}
+              height={800}
+              className="rounded-xl object-contain max-h-[80vh] w-full"
             />
-          </motion.div>
-        ))}
-      </motion.div>
+            <p className="text-white mt-4 text-center text-lg">{selected.alt}</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
