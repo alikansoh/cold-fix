@@ -6,7 +6,7 @@ import Testimonials from "./Components/Testimonials";
 import CallToAction from "./Components/CallToAction";
 import Gallery from "./Components/Gallery";
 import 'keen-slider/keen-slider.min.css';
-
+import Brands from "./Components/Brands"
 import FAQSection from "./Components/Faqs";
 export default function Home() {
   return (
@@ -15,7 +15,10 @@ export default function Home() {
       <Services/>
       <WhyChooseUs/>
       <Testimonials/>
+      <Brands/>
+
       <CallToAction/>
+
       <Gallery/>
       <FAQSection/>
 
