@@ -36,7 +36,7 @@ export default function FAQSection() {
       className="bg-sky-50 py-20 px-6 sm:px-10 lg:px-32 text-gray-900"
     >
       <div className="max-w-5xl mx-auto text-center mb-16">
-        <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">Frequently Asked Questions</h2>
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-sky-800 mb-4 drop-shadow-sm">Frequently Asked Questions</h2>
         <p className="text-gray-600 text-lg">
           Got questions? We've got the answers. Here's what most customers ask us.
         </p>

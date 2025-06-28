@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
   { src: '/gallery1.jpeg', alt: 'Air Conditioner Installation' },
@@ -13,33 +14,53 @@ const images = [
 ];
 
 export default function GallerySection() {
-  const [selected, setSelected] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
+
+  const openModal = (index) => setCurrentIndex(index);
+  const closeModal = () => setCurrentIndex(null);
+  const nextImage = () => setCurrentIndex((prev) => (prev + 1) % images.length);
+  const prevImage = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (currentIndex !== null) {
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+      }
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [currentIndex]);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-white via-sky-50 to-blue-100" id="gallery">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-sky-800 mb-4 drop-shadow-sm">
-          Explore Our Work
-        </h2>
-        <p className="text-gray-600 mb-12 max-w-xl mx-auto text-lg">
-          Real results from our skilled technicians. Precision. Cleanliness. Quality.
-        </p>
+    <section className="bg-gradient-to-br from-white via-sky-50 to-blue-100 py-20" id="gallery">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-sky-800 drop-shadow-sm mb-4">
+            Our Work Speaks for Itself
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Discover the quality and attention to detail in our recent appliance repairs and installations.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {images.map((img, idx) => (
+        {/* Masonry Grid */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+          {images.map((img, index) => (
             <div
-              key={idx}
-              className="group relative rounded-2xl shadow-xl overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-2xl"
-              onClick={() => setSelected(img)}
+              key={index}
+              className="overflow-hidden rounded-xl cursor-pointer relative group"
+              onClick={() => openModal(index)}
             >
               <Image
                 src={img.src}
                 alt={img.alt}
-                width={600}
-                height={400}
-                className="w-full h-64 object-cover transition group-hover:brightness-75"
+                width={800}
+                height={600}
+                className="w-full h-auto transform transition duration-300 group-hover:scale-105 rounded-xl"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent text-white text-sm sm:text-base px-4 py-3 opacity-0 group-hover:opacity-100 transition duration-300">
+              <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/60 to-transparent text-white px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition">
                 {img.alt}
               </div>
             </div>
@@ -47,27 +68,49 @@ export default function GallerySection() {
         </div>
       </div>
 
-      {/* Lightbox Modal */}
-      {selected && (
+      {/* Modal */}
+      {currentIndex !== null && (
         <div
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center px-4"
-          onClick={() => setSelected(null)}
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center px-4 transition-opacity animate-fade"
+          onClick={closeModal}
         >
-          <div className="relative max-w-4xl w-full">
+          <div className="relative max-w-6xl w-full" onClick={(e) => e.stopPropagation()}>
+            {/* Close Button */}
             <button
-              onClick={() => setSelected(null)}
-              className="absolute top-4 right-4 text-white text-4xl font-bold hover:text-red-400"
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-white hover:text-red-400 text-4xl z-50"
             >
-              &times;
+              <X />
             </button>
-            <Image
-              src={selected.src}
-              alt={selected.alt}
-              width={1200}
-              height={800}
-              className="rounded-xl object-contain max-h-[80vh] w-full"
-            />
-            <p className="text-white mt-4 text-center text-lg">{selected.alt}</p>
+
+            {/* Previous Button */}
+            <button
+              onClick={prevImage}
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white hover:text-blue-400 p-2 z-50"
+            >
+              <ChevronLeft size={36} />
+            </button>
+
+            {/* Next Button */}
+            <button
+              onClick={nextImage}
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white hover:text-blue-400 p-2 z-50"
+            >
+              <ChevronRight size={36} />
+            </button>
+
+            {/* Image Container */}
+            <div className="w-full max-h-[80vh] flex items-center justify-center mt-10">
+              <Image
+                src={images[currentIndex].src}
+                alt={images[currentIndex].alt}
+                width={1600}
+                height={1200}
+                className="w-auto h-auto max-w-full max-h-full rounded-xl shadow-lg"
+              />
+            </div>
+
+            <p className="text-white mt-6 text-center text-lg">{images[currentIndex].alt}</p>
           </div>
         </div>
       )}

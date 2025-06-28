@@ -39,7 +39,7 @@ export default function Services() {
       className="py-20 bg-white text-gray-900 px-6 sm:px-10 lg:px-32"
     >
       <header className="max-w-4xl mx-auto text-center mb-12">
-        <h2 className="text-3xl font-extrabold tracking-tight">
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-sky-800 mb-4 drop-shadow-sm">
           Our Cooling Services
         </h2>
         <p className="mt-4 text-gray-600 text-lg">

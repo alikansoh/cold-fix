@@ -40,7 +40,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-3xl">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-md">
           Reliable{' '}
-          <span className="text-sky-300">
+          <span className="text-sky-600">
             {firstWord} {secondWord}
             <Cursor cursorColor="#38bdf8" />
           </span>{' '}
