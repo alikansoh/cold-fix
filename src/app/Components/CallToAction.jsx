@@ -19,7 +19,7 @@ export default function CallToAction() {
           Ready to Cool Things Down?
         </h2>
         <p className="text-lg sm:text-xl mb-8 text-white/90">
-          Whether it’s your home, business, or emergency situation — we’re here to help. Contact COOL FIX today and get fast, reliable service you can trust.
+          Whether it’s your home, business, or emergency situation — we’re here to help. Contact COLD FIX today and get fast, reliable service you can trust.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link

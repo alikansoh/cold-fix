@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         {/* Company Info */}
         <div className="text-center md:text-left">
-          <h3 className="text-2xl font-extrabold text-sky-400 mb-2">COOL FIX</h3>
+          <h3 className="text-2xl font-extrabold text-sky-700 mb-2">COLD FIX</h3>
           <p className="text-sm max-w-xs mx-auto md:mx-0">
             Your trusted partner for cooling solutions, refrigeration, and AC services.
           </p>
@@ -46,7 +46,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
-        &copy; {new Date().getFullYear()} COOL FIX. All rights reserved.
+        &copy; {new Date().getFullYear()} COLD FIX. All rights reserved.
       </div>
     </footer>
   );

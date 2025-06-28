@@ -2,7 +2,7 @@ import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Foooter";
-
+import WhatsAppButton from "./Components/WhatsAppButton";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       <body
 className={poppins.className}      >
               <Navbar/>
-
+          <WhatsAppButton/>
         {children}
         <Footer/>
 

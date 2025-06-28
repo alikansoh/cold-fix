@@ -31,7 +31,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-[-1]">
         <img
           src="/hero.jpg"
-          alt="Cooling Services"
+          alt="ColdFix Cooling Services"
           className="w-full h-full object-cover"
         />
       </div>
@@ -39,29 +39,29 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 max-w-3xl">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-md">
-          Reliable{' '}
-          <span className="text-sky-600">
+          Premium{' '}
+          <span className="text-sky-500">
             {firstWord} {secondWord}
-            <Cursor cursorColor="#38bdf8" />
+            <Cursor cursorColor="#0ea5e9" />
           </span>{' '}
           <br />
-          for Every Environment
+          Delivered by Cold Fix
         </h1>
         <p className="text-lg sm:text-xl mb-8 max-w-xl text-white/90">
-          From home AC systems to industrial cold rooms, COOL FIX provides professional, energy-efficient cooling services you can count on.
+          From home air conditioning to industrial-grade cold rooms, <strong>Cold Fix</strong> delivers reliable, energy-efficient cooling solutions tailored to your needs.
         </p>
         <div className="flex flex-wrap gap-4">
           <Link
             href="/services"
-            className="bg-sky-700 hover:bg-sky-800 text-white px-6 py-3 rounded-lg shadow font-semibold text-sm sm:text-base"
+            className="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-lg shadow font-semibold text-sm sm:text-base"
           >
-            Our Services
+            Explore Services
           </Link>
           <Link
             href="/contact"
             className="bg-white text-sky-800 hover:bg-blue-100 px-6 py-3 rounded-lg shadow font-semibold text-sm sm:text-base"
           >
-            Get a Quote
+            Request a Quote
           </Link>
         </div>
       </div>

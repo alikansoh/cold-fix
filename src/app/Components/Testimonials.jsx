@@ -9,13 +9,13 @@ const testimonials = [
   {
     name: 'Sarah M.',
     feedback:
-      'COOL FIX saved the day when our AC broke during a heatwave. Super fast, professional, and affordable!',
+      'COLD FIX saved the day when our AC broke during a heatwave. Super fast, professional, and affordable!',
     location: 'London',
   },
   {
     name: 'James R.',
     feedback:
-      'We use COOL FIX for our restaurant’s cold rooms — they’re always on time and know their stuff.',
+      'We use COLD FIX for our restaurant’s cold rooms — they’re always on time and know their stuff.',
     location: 'Birmingham',
   },
   {
@@ -27,13 +27,13 @@ const testimonials = [
   {
     name: 'Liam T.',
     feedback:
-      'Professional, reliable, and affordable. Great experience with COOL FIX for our office AC system.',
+      'Professional, reliable, and affordable. Great experience with COLD FIX for our office AC system.',
     location: 'Leeds',
   },
   {
     name: 'Nina P.',
     feedback:
-      'Their cold room maintenance is outstanding. Our business runs smoothly thanks to COOL FIX.',
+      'Their cold room maintenance is outstanding. Our business runs smoothly thanks to COLD FIX.',
     location: 'Glasgow',
   },
 ];
@@ -77,7 +77,7 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto text-center mb-10">
         <h2 className="text-4xl font-extrabold text-sky-800 mb-3">What Our Clients Say</h2>
         <p className="text-gray-600 text-lg">
-          Real experiences from people who trust COOL FIX with their cooling systems.
+          Real experiences from people who trust COLD FIX with their cooling systems.
         </p>
       </div>
 
