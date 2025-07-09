@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://coldfix.co.uk/sitemap.xml
