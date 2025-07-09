@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Foooter";
 import WhatsAppButton from "./Components/WhatsAppButton";
+import IceAnimation from "./Components/IceAnimation";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -13,8 +15,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '600'],
+  subsets: ["latin"],
+  weight: ["300", "400", "600"],
 });
 export const metadata = {
   title: "Create Next App",
@@ -24,13 +26,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-className={poppins.className}      >
-              <Navbar/>
-          <WhatsAppButton/>
-        {children}
-        <Footer/>
+      <body className={poppins.className}>
+        <Navbar />
+        <IceAnimation/>
 
+       <WhatsAppButton />
+        {children}
+        <Footer />
       </body>
     </html>
   );

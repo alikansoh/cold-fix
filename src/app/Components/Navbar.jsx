@@ -45,7 +45,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="text-4xl font-extrabold text-white tracking-tight hover:text-sky-300 transition">
-            ColdFix
+            Cold Fix
           </Link>
 
           {/* Desktop Menu */}

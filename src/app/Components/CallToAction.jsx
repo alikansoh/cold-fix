@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 export default function CallToAction() {
   return (
     <section className="relative py-24 px-6 sm:px-10 lg:px-32 bg-sky-800 text-white overflow-hidden">
-      <div className="absolute inset-0 opacity-20 bg-[url('/cta-bg.jpg')] bg-cover bg-center pointer-events-none" />
+      <div className="absolute inset-0 opacity-20 ] bg-cover bg-center pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
