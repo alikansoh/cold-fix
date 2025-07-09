@@ -5,12 +5,12 @@ import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
-  { src: '/gallery1.jpeg', alt: 'Air Conditioner Installation' },
-  { src: '/gallery2.jpeg', alt: 'AC Repair' },
-  { src: '/gallery3.jpeg', alt: 'Fridge Maintenance' },
+  { src: '/gallery1.jpeg', alt: 'Cold Room  Installation' },
+  { src: '/gallery2.jpeg', alt: 'Cold Room ' },
+  { src: '/gallery3.jpeg', alt: 'Cold Room Repair' },
   { src: '/gallery4.jpeg', alt: 'Freezer Fix' },
-  { src: '/gallery5.jpeg', alt: 'Washing Machine Repair' },
-  { src: '/gallery6.jpeg', alt: 'Dryer Service' },
+  { src: '/gallery5.jpeg', alt: 'Ac Installation' },
+  { src: '/gallery6.jpeg', alt: 'Ac Installation' },
 ];
 
 export default function GallerySection() {

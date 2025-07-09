@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'motion/react'; // ✅ Updated import
+import { motion } from 'framer-motion';
 
 export default function Services() {
   const services = [
@@ -26,49 +26,71 @@ export default function Services() {
     },
   ];
 
-  // Animation variants for each card
-  const cardVariants = {
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const card = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
+    show: { opacity: 1, y: 0 },
   };
 
   return (
     <section
       id="services"
-      aria-label="Cooling services offered by COOL FIX"
-      className="py-20 bg-white text-gray-900 px-6 sm:px-10 lg:px-32"
+      className="py-24 px-6 sm:px-10 lg:px-32 bg-gradient-to-b from-sky-50 via-white to-white"
     >
-      <header className="max-w-4xl mx-auto text-center mb-12">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-sky-800 mb-4 drop-shadow-sm">
+      <header className="text-center max-w-4xl mx-auto mb-16">
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-sky-800 drop-shadow-sm">
           Our Cooling Services
         </h2>
         <p className="mt-4 text-gray-600 text-lg">
-          Comprehensive refrigeration, air conditioning, and cold room solutions tailored to your needs.
+          Expert cooling and refrigeration solutions tailored for homes and businesses across the UK.
         </p>
       </header>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         {services.map(({ title, desc, icon }, index) => (
-          <motion.article
+          <motion.div
             key={title}
-            className="p-6 bg-sky-50 rounded-lg shadow-md hover:shadow-lg transition cursor-pointer"
-            tabIndex={0}
-            aria-label={title}
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ scale: 1.05, y: -5 }}
+            variants={card}
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+            className="group relative p-6 rounded-3xl border border-sky-100 bg-white/60 backdrop-blur-md shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl"
           >
-            <div className="text-5xl mb-4" aria-hidden="true">
+            {/* Animated Gradient Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-sky-200/20 to-white/10 opacity-0 group-hover:opacity-100 z-0 transition duration-300 pointer-events-none" />
+
+            {/* Icon Circle */}
+            <motion.div
+              whileHover={{ y: -5, rotate: 2 }}
+              className="relative z-10 w-16 h-16 mb-5 flex items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-sky-400 shadow-inner text-white text-2xl transition-transform"
+            >
               {icon}
+            </motion.div>
+
+            {/* Title & Description */}
+            <div className="relative z-10">
+              <h3 className="text-lg font-semibold text-sky-900 mb-2">{title}</h3>
+              <p className="text-gray-700 text-sm leading-relaxed">{desc}</p>
             </div>
-            <h3 className="text-xl font-semibold mb-2">{title}</h3>
-            <p className="text-gray-700">{desc}</p>
-          </motion.article>
+
+            {/* Hover Underline */}
+            <div className="absolute bottom-5 left-6 w-0 h-[2px] bg-sky-400 transition-all duration-300 group-hover:w-16" />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

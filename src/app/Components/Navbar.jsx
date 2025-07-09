@@ -11,8 +11,9 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Us' },
     { href: '/services', label: 'Our Services' },
+
+    { href: '/about', label: 'About Us' },
     { href: '/contact', label: 'Contact' },
   ];
 
@@ -27,7 +28,7 @@ export default function Navbar() {
           </span>
           <span className="flex items-center space-x-2">
             <FiPhone className="text-white" />
-            <a href="tel:+447123456789" className="hover:underline">+44 7123 456 789</a>
+            <a href="tel:+447827268100" className="hover:underline">+44 7827268100</a>
           </span>
         </div>
         <div className="hidden sm:flex space-x-6 text-white">

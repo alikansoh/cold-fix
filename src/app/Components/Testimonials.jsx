@@ -7,36 +7,37 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const testimonials = [
   {
-    name: 'Sarah M.',
+    name: 'Zaika',
     feedback:
-      'COLD FIX saved the day when our AC broke during a heatwave. Super fast, professional, and affordable!',
+      'COLD FIX responded promptly during a critical heatwave when our air conditioning system failed. Their team was fast, professional, and delivered cost-effective service. Highly recommended.',
+    location: 'Hyde Park, London',
+  },
+  {
+    name: 'Best Broasted',
+    feedback:
+      'We rely on COLD FIX for the ongoing maintenance and servicing of our restaurant’s cold rooms. They’re consistently punctual, knowledgeable, and dependable.',
+    location: 'Edgware Road, London',
+  },
+  {
+    name: 'Tamarind',
+    feedback:
+      'We’ve been thoroughly impressed with the professionalism and technical expertise of the COLD FIX team. Their customer service is outstanding, and we confidently recommend their services.',
+    location: 'Soho, London',
+  },
+  {
+    name: 'MW Capture',
+    feedback:
+      'COLD FIX provided an excellent solution for our office’s air conditioning needs. The service was reliable, affordable, and executed with a high level of professionalism.',
+    location: 'Bolina Road, London',
+  },
+  {
+    name: 'La Petite France',
+    feedback:
+      'We’ve seen a significant improvement in the performance and reliability of our cold room systems since partnering with COLD FIX. Their maintenance services are exceptional.',
     location: 'London',
   },
-  {
-    name: 'James R.',
-    feedback:
-      'We use COLD FIX for our restaurant’s cold rooms — they’re always on time and know their stuff.',
-    location: 'Birmingham',
-  },
-  {
-    name: 'Amira A.',
-    feedback:
-      'Excellent customer service and very knowledgeable technicians. I highly recommend their team!',
-    location: 'Manchester',
-  },
-  {
-    name: 'Liam T.',
-    feedback:
-      'Professional, reliable, and affordable. Great experience with COLD FIX for our office AC system.',
-    location: 'Leeds',
-  },
-  {
-    name: 'Nina P.',
-    feedback:
-      'Their cold room maintenance is outstanding. Our business runs smoothly thanks to COLD FIX.',
-    location: 'Glasgow',
-  },
 ];
+
 
 function Card({ name, feedback, location }) {
   return (
