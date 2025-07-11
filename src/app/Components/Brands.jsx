@@ -9,6 +9,9 @@ const brandLogos = [
   { src: '/logos/bosch.png', alt: 'Bosch' },
   { src: '/logos/whirlpool.svg', alt: 'Whirlpool' },
   { src: '/logos/panasonic.png', alt: 'Panasonic' },
+  {src:'/logos/Fujitsu-Logo.png',alt: 'Fujitsu'},
+  {src:'/logos/Hitachi-Logo.png',alt: 'Hitachi'}
+
 ];
 
 export default function BrandLogoSlider() {
@@ -52,7 +55,7 @@ export default function BrandLogoSlider() {
         }
 
         .animate-slide {
-          animation: slide 30s linear infinite;
+          animation: slide 15s linear infinite;
         }
       `}</style>
     </section>
