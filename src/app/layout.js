@@ -45,7 +45,7 @@ export const metadata = {
     siteName: "ColdFix",
     images: [
       {
-        url: "/ice-og.svg", // Put this SVG in the /public folder
+        url: "/logo.png", 
         width: 1200,
         height: 630,
         alt: "ColdFix – AC & Refrigeration",
@@ -60,6 +60,9 @@ export const metadata = {
     description:
       "Fast, affordable air conditioning and refrigeration services for homes and businesses in London.",
     images: ["/ice-og.svg"],
+  },
+  icons: {
+    icon: "/logo.png", 
   },
 };
 

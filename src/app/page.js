@@ -2,7 +2,7 @@ import Image from "next/image";
 import Hero from "./Components/Hero";
 import Services from "./Components/Services";
 import WhyChooseUs from "./Components/WhyChooseUS";
-import Testimonials from "./Components/Testimonials";
+import Testimonials from './Components/Testimonials';
 import CallToAction from "./Components/CallToAction";
 import Gallery from "./Components/Gallery";
 import 'keen-slider/keen-slider.min.css';
@@ -16,7 +16,6 @@ export default function Home() {
       <WhyChooseUs/>
       <Testimonials/>
       <Brands/>
-
       <CallToAction/>
 
       <Gallery/>
