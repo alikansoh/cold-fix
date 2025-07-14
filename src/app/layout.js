@@ -45,7 +45,7 @@ export const metadata = {
     siteName: "Cold Fix",
     images: [
       {
-        url: "/logo.png", 
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "ColdFix – AC & Refrigeration",
@@ -62,13 +62,18 @@ export const metadata = {
     images: ["/ice-og.svg"],
   },
   icons: {
-    icon: "/logo.png", 
+    icon: "/favicon.ico",   
+    apple: "/apple-touch-icon.png", 
+    shortcut: "/favicon-32x32.png", 
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${poppins.className}`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} ${poppins.className}`}
+    >
       <body>
         <Navbar />
         <IceAnimation />
