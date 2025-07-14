@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
 const wordPairs = [
@@ -20,19 +21,25 @@ export default function Hero() {
     delaySpeed: 1200,
   });
 
-  const [firstWord, secondWord] = text.split(' ');
+  // Safely split the text to first and second word (if possible)
+  const [firstWord = '', secondWord = ''] = text.split(' ');
 
   return (
-    <section className="relative min-h-[80vh] flex flex-col justify-center items-start px-6 sm:px-10 lg:px-32 py-16 overflow-hidden text-white">
+    <section
+      className="relative min-h-[80vh] flex flex-col justify-center items-start px-6 sm:px-10 lg:px-32 py-16 overflow-hidden text-white"
+      aria-label="Hero section with rotating service specialties"
+    >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50 z-0" />
 
       {/* Background Image */}
       <div className="absolute inset-0 z-[-1]">
-        <img
+        <Image
           src="/hero.jpg"
           alt="ColdFix Cooling Services"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          priority
         />
       </div>
 
@@ -40,7 +47,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-3xl">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-md">
           Premium{' '}
-          <span className="text-sky-500">
+          <span className="text-sky-500" aria-live="polite" aria-atomic="true">
             {firstWord} {secondWord}
             <Cursor cursorColor="#0ea5e9" />
           </span>{' '}
@@ -48,7 +55,9 @@ export default function Hero() {
           Delivered by Cold Fix
         </h1>
         <p className="text-lg sm:text-xl mb-8 max-w-xl text-white/90">
-          From home air conditioning to industrial-grade cold rooms, <strong>Cold Fix</strong> delivers reliable, energy-efficient cooling solutions tailored to your needs.
+          From home air conditioning to industrial-grade cold rooms,{' '}
+          <strong>Cold Fix</strong> delivers reliable, energy-efficient cooling
+          solutions tailored to your needs.
         </p>
         <div className="flex flex-wrap gap-4">
           <Link

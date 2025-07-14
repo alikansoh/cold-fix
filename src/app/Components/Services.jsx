@@ -26,7 +26,7 @@ export default function Services() {
     },
   ];
 
-  const container = {
+  const containerVariants = {
     hidden: {},
     show: {
       transition: {
@@ -35,7 +35,7 @@ export default function Services() {
     },
   };
 
-  const card = {
+  const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     show: { opacity: 1, y: 0 },
   };
@@ -44,6 +44,7 @@ export default function Services() {
     <section
       id="services"
       className="py-24 px-6 sm:px-10 lg:px-32 bg-gradient-to-b from-sky-50 via-white to-white"
+      aria-label="Cooling services offered"
     >
       <header className="text-center max-w-4xl mx-auto mb-16">
         <h2 className="text-4xl sm:text-5xl font-extrabold text-sky-800 drop-shadow-sm">
@@ -56,18 +57,21 @@ export default function Services() {
 
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto"
-        variants={container}
+        variants={containerVariants}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
       >
-        {services.map(({ title, desc, icon }, index) => (
+        {services.map(({ title, desc, icon }) => (
           <motion.div
             key={title}
-            variants={card}
+            variants={cardVariants}
             whileHover={{ scale: 1.05 }}
             transition={{ type: 'spring', stiffness: 300 }}
-            className="group relative p-6 rounded-3xl border border-sky-100 bg-white/60 backdrop-blur-md shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl"
+            className="group relative p-6 rounded-3xl border border-sky-100 bg-white/60 backdrop-blur-md shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl cursor-pointer"
+            role="article"
+            tabIndex={0}
+            aria-label={title}
           >
             {/* Animated Gradient Background */}
             <div className="absolute inset-0 bg-gradient-to-br from-sky-200/20 to-white/10 opacity-0 group-hover:opacity-100 z-0 transition duration-300 pointer-events-none" />
@@ -76,6 +80,7 @@ export default function Services() {
             <motion.div
               whileHover={{ y: -5, rotate: 2 }}
               className="relative z-10 w-16 h-16 mb-5 flex items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-sky-400 shadow-inner text-white text-2xl transition-transform"
+              aria-hidden="true"
             >
               {icon}
             </motion.div>

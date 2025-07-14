@@ -25,7 +25,7 @@ export const metadata = {
   description:
     "ColdFix provides fast, reliable AC installation, repair, and commercial refrigeration services across London. Experts in cold rooms and emergency HVAC support.",
   keywords: [
-    "ColdFix",
+    "Cold Fix",
     "coldfix.co.uk",
     "AC repair London",
     "Air conditioning installation",
@@ -36,13 +36,13 @@ export const metadata = {
     "London cooling services",
   ],
   metadataBase: new URL("https://coldfix.co.uk"),
-  authors: [{ name: "ColdFix Team", url: "https://coldfix.co.uk" }],
+  authors: [{ name: "Cold Fix Team", url: "https://coldfix.co.uk" }],
   openGraph: {
-    title: "ColdFix | Expert Air Conditioning & Refrigeration Services",
+    title: "Cold Fix | Expert Air Conditioning & Refrigeration Services",
     description:
       "Trusted by restaurants and businesses across London, ColdFix specialises in AC repair, installation, and refrigeration services.",
     url: "https://coldfix.co.uk",
-    siteName: "ColdFix",
+    siteName: "Cold Fix",
     images: [
       {
         url: "/logo.png", 
@@ -56,7 +56,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ColdFix | AC & Refrigeration Experts in London",
+    title: "Cold Fix | AC & Refrigeration Experts in London",
     description:
       "Fast, affordable air conditioning and refrigeration services for homes and businesses in London.",
     images: ["/ice-og.svg"],

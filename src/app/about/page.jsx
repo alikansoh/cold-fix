@@ -3,9 +3,42 @@ import { motion } from 'framer-motion';
 import { FaBolt, FaShieldAlt, FaUsers, FaClock, FaSnowflake, FaTools } from 'react-icons/fa';
 
 export default function AboutPage() {
+  const reasons = [
+    {
+      icon: <FaBolt aria-hidden="true" />,
+      title: 'Rapid Response',
+      desc: 'Emergency callouts 24/7 across the UK — we’re there when you need us most.',
+    },
+    {
+      icon: <FaShieldAlt aria-hidden="true" />,
+      title: 'Certified & Insured',
+      desc: 'All technicians are fully trained, certified and insured for your peace of mind.',
+    },
+    {
+      icon: <FaUsers aria-hidden="true" />,
+      title: 'Customer First',
+      desc: 'We put people before profit. Our service is honest, clear and built on trust.',
+    },
+    {
+      icon: <FaClock aria-hidden="true" />,
+      title: 'Always On Time',
+      desc: 'Punctual, professional, and efficient — we respect your time and schedule.',
+    },
+    {
+      icon: <FaSnowflake aria-hidden="true" />,
+      title: 'Specialised Experts',
+      desc: 'Experts in ACs, chillers, freezers, fridges & more. Domestic + commercial.',
+    },
+    {
+      icon: <FaTools aria-hidden="true" />,
+      title: 'Preventative Maintenance',
+      desc: 'Stay ahead of breakdowns with our tailored maintenance packages.',
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-white text-gray-800 px-6 sm:px-10 lg:px-24 py-20 space-y-28">
-
+      
       {/* HERO */}
       <motion.section
         initial={{ opacity: 0, y: -20 }}
@@ -13,8 +46,9 @@ export default function AboutPage() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
         className="text-center"
+        aria-labelledby="about-hero-title"
       >
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-sky-800 mb-4">
+        <h1 id="about-hero-title" className="text-4xl sm:text-5xl font-extrabold text-sky-800 mb-4">
           About <span className="text-sky-600">ColdFix</span>
         </h1>
         <p className="text-lg sm:text-xl max-w-3xl mx-auto text-gray-600">
@@ -29,25 +63,30 @@ export default function AboutPage() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
         className="text-center"
+        aria-labelledby="why-choose-title"
       >
-        <h2 className="text-3xl sm:text-4xl font-bold text-sky-800 mb-10">Why Choose ColdFix?</h2>
+        <h2 id="why-choose-title" className="text-3xl sm:text-4xl font-bold text-sky-800 mb-10">
+          Why Choose ColdFix?
+        </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            { icon: <FaBolt />, title: 'Rapid Response', desc: 'Emergency callouts 24/7 across the UK — we’re there when you need us most.' },
-            { icon: <FaShieldAlt />, title: 'Certified & Insured', desc: 'All technicians are fully trained, certified and insured for your peace of mind.' },
-            { icon: <FaUsers />, title: 'Customer First', desc: 'We put people before profit. Our service is honest, clear and built on trust.' },
-            { icon: <FaClock />, title: 'Always On Time', desc: 'Punctual, professional, and efficient — we respect your time and schedule.' },
-            { icon: <FaSnowflake />, title: 'Specialised Experts', desc: 'Experts in ACs, chillers, freezers, fridges & more. Domestic + commercial.' },
-            { icon: <FaTools />, title: 'Preventative Maintenance', desc: 'Stay ahead of breakdowns with our tailored maintenance packages.' },
-          ].map(({ icon, title, desc }, i) => (
-            <div key={i} className="bg-sky-50 rounded-xl p-6 shadow-sm hover:shadow-md transition text-left">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
+          {reasons.map(({ icon, title, desc }, i) => (
+            <li
+              key={i}
+              className="bg-sky-50 rounded-xl p-6 shadow-sm hover:shadow-md transition text-left"
+              aria-labelledby={`reason-title-${i}`}
+              aria-describedby={`reason-desc-${i}`}
+            >
               <div className="text-sky-700 text-2xl mb-4">{icon}</div>
-              <h3 className="text-xl font-semibold text-sky-800 mb-2">{title}</h3>
-              <p className="text-gray-600">{desc}</p>
-            </div>
+              <h3 id={`reason-title-${i}`} className="text-xl font-semibold text-sky-800 mb-2">
+                {title}
+              </h3>
+              <p id={`reason-desc-${i}`} className="text-gray-600">
+                {desc}
+              </p>
+            </li>
           ))}
-        </div>
+        </ul>
       </motion.section>
 
       {/* TRUSTED BY BUSINESSES */}
@@ -57,8 +96,9 @@ export default function AboutPage() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
         className="bg-sky-50 rounded-3xl p-10 sm:p-16 text-center shadow-md"
+        aria-labelledby="trusted-title"
       >
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-sky-800 mb-4">
+        <h2 id="trusted-title" className="text-3xl sm:text-4xl font-extrabold text-sky-800 mb-4">
           Trusted by Businesses, Loved by Clients
         </h2>
 
@@ -66,9 +106,16 @@ export default function AboutPage() {
           ColdFix is the name UK businesses and homeowners rely on for fast, affordable and expert cooling solutions.
         </p>
 
-        <div className="flex justify-center gap-1 mb-2 text-yellow-400 text-xl sm:text-2xl">
-          {'★★★★★'.split('').map((star, i) => <span key={i}>{star}</span>)}
+        <div
+          className="flex justify-center gap-1 mb-2 text-yellow-400 text-xl sm:text-2xl"
+          role="img"
+          aria-label="Rated 5 out of 5 stars"
+        >
+          {'★★★★★'.split('').map((star, i) => (
+            <span key={i}>{star}</span>
+          ))}
         </div>
+
         <p className="text-gray-500 text-sm mb-6">
           Rated 5.0 based on verified reviews across the UK
         </p>
@@ -88,8 +135,9 @@ export default function AboutPage() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
         className="bg-sky-700 text-white text-center py-20 px-6 rounded-3xl shadow-2xl"
+        aria-labelledby="cta-title"
       >
-        <h3 className="text-3xl sm:text-4xl font-extrabold mb-4">
+        <h3 id="cta-title" className="text-3xl sm:text-4xl font-extrabold mb-4">
           Let’s Get You Cool Again ❄️
         </h3>
 

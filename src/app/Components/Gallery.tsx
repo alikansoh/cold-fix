@@ -5,24 +5,24 @@ import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
-  { src: '/gallery1.jpeg', alt: 'Cold Room  Installation' },
-  { src: '/gallery2.jpeg', alt: 'Cold Room ' },
+  { src: '/gallery1.jpeg', alt: 'Cold Room Installation' },
+  { src: '/gallery2.jpeg', alt: 'Cold Room Overview' },
   { src: '/gallery3.jpeg', alt: 'Cold Room Repair' },
   { src: '/gallery4.jpeg', alt: 'Freezer Fix' },
-  { src: '/gallery5.jpeg', alt: 'Ac Installation' },
-  { src: '/gallery6.jpeg', alt: 'Ac Installation' },
+  { src: '/gallery5.jpeg', alt: 'AC Installation - Outdoor Unit' },
+  { src: '/gallery6.jpeg', alt: 'AC Installation - Indoor Unit' },
 ];
 
 export default function GallerySection() {
-  const [currentIndex, setCurrentIndex] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
-  const openModal = (index) => setCurrentIndex(index);
+  const openModal = (index: number) => setCurrentIndex(index);
   const closeModal = () => setCurrentIndex(null);
-  const nextImage = () => setCurrentIndex((prev) => (prev + 1) % images.length);
-  const prevImage = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  const nextImage = () => setCurrentIndex((prev) => (prev! + 1) % images.length);
+  const prevImage = () => setCurrentIndex((prev) => (prev! - 1 + images.length) % images.length);
 
   useEffect(() => {
-    const handleKey = (e) => {
+    const handleKey = (e: KeyboardEvent) => {
       if (currentIndex !== null) {
         if (e.key === 'Escape') closeModal();
         if (e.key === 'ArrowRight') nextImage();
@@ -34,7 +34,10 @@ export default function GallerySection() {
   }, [currentIndex]);
 
   return (
-    <section className="bg-gradient-to-br from-white via-sky-50 to-blue-100 py-20" id="gallery">
+    <section
+      className="bg-gradient-to-br from-white via-sky-50 to-blue-100 py-20"
+      id="gallery"
+    >
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-sky-800 drop-shadow-sm mb-4">
@@ -71,13 +74,20 @@ export default function GallerySection() {
       {/* Modal */}
       {currentIndex !== null && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Image preview: ${images[currentIndex].alt}`}
           className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center px-4 transition-opacity animate-fade"
           onClick={closeModal}
         >
-          <div className="relative max-w-6xl w-full" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="relative max-w-6xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Close Button */}
             <button
               onClick={closeModal}
+              aria-label="Close modal"
               className="absolute top-4 right-4 text-white hover:text-red-400 text-4xl z-50"
             >
               <X />
@@ -86,6 +96,7 @@ export default function GallerySection() {
             {/* Previous Button */}
             <button
               onClick={prevImage}
+              aria-label="Previous image"
               className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white hover:text-blue-400 p-2 z-50"
             >
               <ChevronLeft size={36} />
@@ -94,6 +105,7 @@ export default function GallerySection() {
             {/* Next Button */}
             <button
               onClick={nextImage}
+              aria-label="Next image"
               className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white hover:text-blue-400 p-2 z-50"
             >
               <ChevronRight size={36} />
@@ -110,7 +122,10 @@ export default function GallerySection() {
               />
             </div>
 
-            <p className="text-white mt-6 text-center text-lg">{images[currentIndex].alt}</p>
+            {/* Caption */}
+            <p className="text-white mt-6 text-center text-lg">
+              {images[currentIndex].alt}
+            </p>
           </div>
         </div>
       )}
