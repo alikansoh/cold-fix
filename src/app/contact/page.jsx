@@ -113,7 +113,10 @@ export default function ContactPage() {
             </p>
             <p className="flex items-center gap-3">
               <FaMapMarkerAlt aria-hidden="true" />
-              76 Blakesware Gardens, London, UK{" "}
+             114B Viglen House Business Centre 
+Alperton Lane
+Wembley
+HA01HD{" "}
             </p>
             <p className="flex items-center gap-3">
               <FaClock aria-hidden="true" />
