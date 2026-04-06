@@ -95,15 +95,15 @@ export default function OurServicesPage() {
   return (
     <>
       <Head>
-        <title>Cold Fix - Professional Cooling Services in the UK</title>
+        <title>Freex Fix - Professional Cooling Services in the UK</title>
         <meta
           name="description"
-          content="Cold Fix offers expert air conditioning repairs, installations, cold room design, and maintenance services. Fast, reliable, and certified cooling technicians."
+          content="Freez Fix offers expert air conditioning repairs, installations, cold room design, and maintenance services. Fast, reliable, and certified cooling technicians."
         />
         <meta name="keywords" content="cooling services, air conditioning repair, cold room installation, emergency AC repair, UK cooling solutions" />
         <meta name="robots" content="index, follow" />
         {/* Open Graph */}
-        <meta property="og:title" content="Cold Fix - Professional Cooling Services in the UK" />
+        <meta property="og:title" content="Freez Fix - Professional Cooling Services in the UK" />
         <meta property="og:description" content="Expert air conditioning repairs, installations, cold room design, and maintenance services across the UK." />
         <meta property="og:type" content="website" />
         {/* Twitter Card */}

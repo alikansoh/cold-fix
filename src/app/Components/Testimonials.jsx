@@ -9,31 +9,31 @@ const testimonials = [
   {
     name: 'Zaika',
     feedback:
-      'COLD FIX responded promptly during a critical heatwave when our air conditioning system failed. Their team was fast, professional, and delivered cost-effective service. Highly recommended.',
+      'Freez FIX responded promptly during a critical heatwave when our air conditioning system failed. Their team was fast, professional, and delivered cost-effective service. Highly recommended.',
     location: 'Hyde Park, London',
   },
   {
     name: 'Best Broasted',
     feedback:
-      'We rely on COLD FIX for the ongoing maintenance and servicing of our restaurant’s cold rooms. They’re consistently punctual, knowledgeable, and dependable.',
+      'We rely on Freez FIX for the ongoing maintenance and servicing of our restaurant’s cold rooms. They’re consistently punctual, knowledgeable, and dependable.',
     location: 'Edgware Road, London',
   },
   {
     name: 'Tamarind',
     feedback:
-      'We’ve been thoroughly impressed with the professionalism and technical expertise of the COLD FIX team. Their customer service is outstanding, and we confidently recommend their services.',
+      'We’ve been thoroughly impressed with the professionalism and technical expertise of the Freez FIX team. Their customer service is outstanding, and we confidently recommend their services.',
     location: 'Soho, London',
   },
   {
     name: 'MW Capture',
     feedback:
-      'COLD FIX provided an excellent solution for our office’s air conditioning needs. The service was reliable, affordable, and executed with a high level of professionalism.',
+      'Freez FIX provided an excellent solution for our office’s air conditioning needs. The service was reliable, affordable, and executed with a high level of professionalism.',
     location: 'Bolina Road, London',
   },
   {
     name: 'La Petite France',
     feedback:
-      'We’ve seen a significant improvement in the performance and reliability of our cold room systems since partnering with COLD FIX. Their maintenance services are exceptional.',
+      'We’ve seen a significant improvement in the performance and reliability of our cold room systems since partnering with Freez FIX. Their maintenance services are exceptional.',
     location: 'London',
   },
 ];
@@ -93,7 +93,7 @@ export default function Testimonials() {
           What Our Clients Say
         </h2>
         <p className="text-gray-600 text-lg">
-          Real experiences from people who trust COLD FIX with their cooling
+          Real experiences from people who trust Freez FIX with their cooling
           systems.
         </p>
       </div>

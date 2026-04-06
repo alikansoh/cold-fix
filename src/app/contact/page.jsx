@@ -80,7 +80,7 @@ export default function ContactPage() {
           >
             Let's Keep Things Cool ❄️
             <br />
-            Contact <span className="text-sky-600">COLD FIX</span> Today
+            Contact <span className="text-sky-600">Freez FIX</span> Today
           </h1>
 
           <p className="text-gray-600 text-lg mb-8">
@@ -127,7 +127,7 @@ HA01HD{" "}
           <div className="mt-8 hidden lg:block rounded-xl overflow-hidden shadow-md relative w-full aspect-video">
             <Image
               src="/freezfix-technician.jpg"
-              alt="COLD FIX Technician servicing a cooling unit"
+              alt="Freez FIX Technician servicing a cooling unit"
               fill
               className="object-cover"
               priority

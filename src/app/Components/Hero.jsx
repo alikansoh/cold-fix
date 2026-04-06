@@ -52,11 +52,11 @@ export default function Hero() {
             <Cursor cursorColor="#0ea5e9" />
           </span>{' '}
           <br />
-          Delivered by Cold Fix
+          Delivered by Freez Fix
         </h1>
         <p className="text-lg sm:text-xl mb-8 max-w-xl text-white/90">
           From home air conditioning to industrial-grade cold rooms,{' '}
-          <strong>Cold Fix</strong> delivers reliable, energy-efficient cooling
+          <strong>Freez Fix</strong> delivers reliable, energy-efficient cooling
           solutions tailored to your needs.
         </p>
         <div className="flex flex-wrap gap-4">

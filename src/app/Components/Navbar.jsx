@@ -74,7 +74,7 @@ export default function Navbar() {
             href="/"
             className="text-4xl font-extrabold text-white tracking-tight hover:text-sky-300 transition focus:outline-none focus:ring-2 focus:ring-sky-400"
           >
-            Cold Fix
+            Freez Fix
           </Link>
 
           {/* Desktop Menu */}

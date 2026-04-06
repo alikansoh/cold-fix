@@ -46,7 +46,7 @@ export default function WhyChooseUs() {
             transition={{ duration: 0.6 }}
             className="text-4xl font-bold leading-tight"
           >
-            Why Choose <span className="text-sky-600">COLD FIX</span>?
+            Why Choose <span className="text-sky-600">Freez FIX</span>?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, x: -50 }}
@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
 
         {/* Right Column: List */}
         <div className="lg:w-1/2 space-y-6">
-          <ul role="list" aria-label="Reasons to choose Cold Fix for cooling services">
+          <ul role="list" aria-label="Reasons to choose Freez Fix for cooling services">
             {reasons.map(({ title, desc, icon }, index) => (
               <motion.li
                 key={title}
