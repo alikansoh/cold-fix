@@ -21,12 +21,12 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "ColdFix | Air Conditioning & Refrigeration Services in London",
+  title: "freezfix | Air Conditioning & Refrigeration Services in London",
   description:
-    "ColdFix provides fast, reliable AC installation, repair, and commercial refrigeration services across London. Experts in cold rooms and emergency HVAC support.",
+    "freezfix provides fast, reliable AC installation, repair, and commercial refrigeration services across London. Experts in cold rooms and emergency HVAC support.",
   keywords: [
     "Cold Fix",
-    "coldfix.co.uk",
+    "freezfix.co.uk",
     "AC repair London",
     "Air conditioning installation",
     "Refrigeration services",
@@ -35,20 +35,20 @@ export const metadata = {
     "Commercial refrigeration",
     "London cooling services",
   ],
-  metadataBase: new URL("https://coldfix.co.uk"),
-  authors: [{ name: "Cold Fix Team", url: "https://coldfix.co.uk" }],
+  metadataBase: new URL("https://freezfix.co.uk"),
+  authors: [{ name: "Cold Fix Team", url: "https://freezfix.co.uk" }],
   openGraph: {
     title: "Cold Fix | Expert Air Conditioning & Refrigeration Services",
     description:
-      "Trusted by restaurants and businesses across London, ColdFix specialises in AC repair, installation, and refrigeration services.",
-    url: "https://coldfix.co.uk",
+      "Trusted by restaurants and businesses across London, freez fix specialises in AC repair, installation, and refrigeration services.",
+    url: "https://freezfix.co.uk",
     siteName: "Cold Fix",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "ColdFix – AC & Refrigeration",
+        alt: "FreezFix – AC & Refrigeration",
       },
     ],
     locale: "en_GB",

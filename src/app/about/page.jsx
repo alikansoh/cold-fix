@@ -49,10 +49,10 @@ export default function AboutPage() {
         aria-labelledby="about-hero-title"
       >
         <h1 id="about-hero-title" className="text-4xl sm:text-5xl font-extrabold text-sky-800 mb-4">
-          About <span className="text-sky-600">ColdFix</span>
+          About <span className="text-sky-600">Freez fix</span>
         </h1>
         <p className="text-lg sm:text-xl max-w-3xl mx-auto text-gray-600">
-          We're on a mission to keep the UK cool — one unit at a time. With 24/7 availability and decades of experience, ColdFix delivers professional, fast and affordable cooling services you can trust.
+          We're on a mission to keep the UK cool — one unit at a time. With 24/7 availability and decades of experience, Freez Fix delivers professional, fast and affordable cooling services you can trust.
         </p>
       </motion.section>
 
@@ -66,7 +66,7 @@ export default function AboutPage() {
         aria-labelledby="why-choose-title"
       >
         <h2 id="why-choose-title" className="text-3xl sm:text-4xl font-bold text-sky-800 mb-10">
-          Why Choose ColdFix?
+          Why Choose FreezFix?
         </h2>
 
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
@@ -103,7 +103,7 @@ export default function AboutPage() {
         </h2>
 
         <p className="text-gray-700 text-lg max-w-3xl mx-auto mb-6">
-          ColdFix is the name UK businesses and homeowners rely on for fast, affordable and expert cooling solutions.
+         Freez Fix is the name UK businesses and homeowners rely on for fast, affordable and expert cooling solutions.
         </p>
 
         <div
@@ -143,7 +143,7 @@ export default function AboutPage() {
 
         <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-8">
           Whether it’s urgent repair, new installation or preventative maintenance —
-          ColdFix is your go-to partner for professional cooling services in the UK.
+          FreezFix is your go-to partner for professional cooling services in the UK.
         </p>
 
         <a

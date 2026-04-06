@@ -108,7 +108,7 @@ export default function OurServicesPage() {
         <meta property="og:type" content="website" />
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="ColdFix - Professional Cooling Services in the UK" />
+        <meta name="twitter:title" content="FreezFix - Professional Cooling Services in the UK" />
         <meta name="twitter:description" content="Fast, reliable, and certified cooling technicians for your air conditioning and cold room needs." />
       </Head>
 
@@ -125,7 +125,7 @@ export default function OurServicesPage() {
             Comprehensive Cooling Services<br />That Keep You Comfortable
           </h1>
           <p className="text-lg text-gray-600">
-            From emergency repairs to bespoke cold room installations, ColdFix provides trusted solutions tailored to your needs across the UK.
+            From emergency repairs to bespoke cold room installations, Freez Fix provides trusted solutions tailored to your needs across the UK.
           </p>
         </motion.section>
 
@@ -190,7 +190,7 @@ export default function OurServicesPage() {
             viewport={{ once: true }}
             className="text-3xl font-extrabold text-sky-800 text-center mb-10"
           >
-            Why Choose ColdFix?
+            Why Choose Freez Fix?
           </motion.h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
             {whyChooseUsPoints.map(({ title, desc }, i) => (
@@ -221,7 +221,7 @@ export default function OurServicesPage() {
             Ready to experience reliable cooling solutions?
           </h2>
           <p className="mb-8 text-lg max-w-xl mx-auto">
-            Contact ColdFix today for a free consultation and let us keep you cool all year round.
+            Contact Freez Fix today for a free consultation and let us keep you cool all year round.
           </p>
           <a
             href="tel:+44 7827 268100"

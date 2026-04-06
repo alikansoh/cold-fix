@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://coldfix.co.uk',
+    siteUrl: 'https://freezfix.co.uk',
     generateRobotsTxt: true,
     changefreq: 'weekly',
     priority: 0.7,

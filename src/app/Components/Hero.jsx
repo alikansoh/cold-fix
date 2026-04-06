@@ -36,7 +36,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-[-1]">
         <Image
           src="/hero.jpg"
-          alt="ColdFix Cooling Services"
+          alt="FreezFix Cooling Services"
           fill
           className="object-cover"
           priority

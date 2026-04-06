@@ -63,7 +63,7 @@ export default function ContactPage() {
   return (
     <main
       className="min-h-screen bg-white py-20 px-6 sm:px-10 lg:px-32"
-      aria-label="Contact ColdFix cooling services"
+      aria-label="Contact FreezFix cooling services"
     >
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
         {/* LEFT: Info & Imagery */}
@@ -96,7 +96,7 @@ export default function ContactPage() {
               <a
                 href="tel:+447827268100"
                 className="hover:underline"
-                aria-label="Call ColdFix"
+                aria-label="Call FreezFix"
               >
                 +44 7827 268100
               </a>
@@ -104,11 +104,11 @@ export default function ContactPage() {
             <p className="flex items-center gap-3">
               <FaEnvelope aria-hidden="true" />
               <a
-                href="mailto:info@coldfix.co.uk"
+                href="mailto:info@freezFix.co.uk"
                 className="hover:underline"
-                aria-label="Email ColdFix"
+                aria-label="Email FreezFix"
               >
-                info@coldfix.co.uk
+                info@freezfix.co.uk
               </a>
             </p>
             <p className="flex items-center gap-3">
@@ -126,7 +126,7 @@ HA01HD{" "}
 
           <div className="mt-8 hidden lg:block rounded-xl overflow-hidden shadow-md relative w-full aspect-video">
             <Image
-              src="/coldfix-technician.jpg"
+              src="/freezfix-technician.jpg"
               alt="COLD FIX Technician servicing a cooling unit"
               fill
               className="object-cover"

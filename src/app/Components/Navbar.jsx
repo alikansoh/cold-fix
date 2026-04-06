@@ -27,8 +27,8 @@ export default function Navbar() {
         <div className="flex items-center space-x-8">
           <span className="flex items-center space-x-2">
             <FiMail className="text-white" aria-hidden="true" />
-            <a href="mailto:info@coldfix.co.uk" className="hover:underline focus:outline-none focus:ring-2 focus:ring-sky-400" tabIndex={0}>
-              info@coldfix.co.uk
+            <a href="mailto:info@freezfix.co.uk" className="hover:underline focus:outline-none focus:ring-2 focus:ring-sky-400" tabIndex={0}>
+              info@freezfix.co.uk
             </a>
           </span>
           <span className="flex items-center space-x-2">
