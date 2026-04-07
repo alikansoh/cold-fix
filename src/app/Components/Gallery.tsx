@@ -8,9 +8,13 @@ const images = [
   { src: '/gallery1.jpeg', alt: 'Cold Room Installation' },
   { src: '/gallery2.jpeg', alt: 'Cold Room Overview' },
   { src: '/gallery3.jpeg', alt: 'Cold Room Repair' },
-  { src: '/gallery4.jpeg', alt: 'Freezer Fix' },
-  { src: '/gallery5.jpeg', alt: 'AC Installation - Outdoor Unit' },
-  { src: '/gallery6.jpeg', alt: 'AC Installation - Indoor Unit' },
+  { src: '/cold1.jpeg', alt: '' },
+  { src: '/cold2.jpeg', alt: '' },
+  { src: '/cold3.jpeg', alt: '' },
+  { src: '/cold4.jpeg', alt: '' },
+  { src: '/cold5.jpeg', alt: '' },
+  { src: '/cold6.jpeg', alt: '' },
+  { src: '/gallery6.jpeg', alt: '' },
 ];
 
 export default function GallerySection() {
